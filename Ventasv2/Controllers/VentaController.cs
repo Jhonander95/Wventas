@@ -15,6 +15,13 @@ namespace Ventasv2.Controllers
     [Authorize]
     public class VentaController : ControllerBase
     {
+        private IVentaService _venta;
+
+        public VentaController(IVentaService venta)
+        {
+            _venta = venta;
+        }
+
         [HttpPost]
 
         public IActionResult Add(VentaRequest model)
@@ -23,8 +30,8 @@ namespace Ventasv2.Controllers
 
             try
             {
-                var venta = new VentaService();
-                venta.Add(model);
+                //var venta = new VentaService();
+                _venta.Add(model);
                 respuesta.Exito = 1;                
             }
             catch(Exception ex)

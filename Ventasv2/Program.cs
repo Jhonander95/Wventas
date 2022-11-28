@@ -54,7 +54,7 @@ builder.Services.AddAuthentication(d =>
 
  });
 builder.Services.AddScoped<IUserService, UserService>();
-builder.Services.AddScoped<IVentaService, IVentaService>();
+builder.Services.AddScoped<IVentaService, VentaService>();
 
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
